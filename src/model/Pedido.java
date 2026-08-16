@@ -11,5 +11,29 @@ public abstract class Pedido {
         this.tipoPedido = tipoPedido;
     }
 
+    public String getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(String idPedido) {
+        this.idPedido = idPedido;
+    }
+
+    public String getDireccionEntrega() {
+        return direccionEntrega;
+    }
+
+    public void setDireccionEntrega(String direccionEntrega) {
+        this.direccionEntrega = direccionEntrega;
+    }
+
+    public String getTipoPedido() {
+        return tipoPedido;
+    }
+
+    public void setTipoPedido(String tipoPedido) {
+        this.tipoPedido = tipoPedido;
+    }
+
     public abstract void asignarRepartidor();
 }
