@@ -7,6 +7,7 @@ Actividad formativa 1 (Semana 1)
 Alonso Antonio Bonansco Vergara  
 Desarrollo Orientado a Objetos II - 004A  
 Analista Programador Computacional
+
 ---
 
 ### Descripción:
