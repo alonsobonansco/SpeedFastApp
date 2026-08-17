@@ -14,11 +14,11 @@ public class Main {
     public static void main(String[] args) {
         // Asignación de subclase a una referencia de la superclase (Upcasting)
         Pedido comida = new PedidoComida(
-                "001", "calle123", "Comida", true);
+                "001", "Comida", "calle123", true);
         Pedido encomienda = new PedidoEncomienda(
-                "002", "calle456", "Encomienda", 28.0);
+                "002", "Encomienda", "calle456", 28.0);
         Pedido express = new PedidoExpress(
-                "003", "calle789", "Express", 55.0);
+                "003", "Express", "calle789", 55.0);
 
         comida.asignarRepartidor();
         comida.asignarRepartidor("Carlos");

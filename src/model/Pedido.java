@@ -9,7 +9,6 @@ public abstract class Pedido {
     private final String tipoPedido;
     private String direccionEntrega;
 
-
     public Pedido(String idPedido, String tipoPedido, String direccionEntrega) {
         if (idPedido == null || idPedido.isBlank()) {
             throw new IllegalArgumentException("El ID del pedido no puede estar vacío.");
@@ -17,7 +16,6 @@ public abstract class Pedido {
         if (tipoPedido == null || tipoPedido.isBlank()) {
             throw new IllegalArgumentException("El tipo de pedido debe ser válido.");
         }
-
         this.idPedido = idPedido;
         this.tipoPedido = tipoPedido;
         setDireccionEntrega(direccionEntrega);
