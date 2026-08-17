@@ -1,39 +1,39 @@
 package model;
 
+/**
+ * Clase genérica de un pedido y superclase de subtipos de pedidos.
+ * Es abstract porque no necesita ser instanciada.
+ */
 public abstract class Pedido {
-    private String idPedido;
+    private final String idPedido;
+    private final String tipoPedido;
     private String direccionEntrega;
-    private String tipoPedido;
 
-    public Pedido(String idPedido, String direccionEntrega, String tipoPedido) {
+
+    public Pedido(String idPedido, String tipoPedido, String direccionEntrega) {
+        if (idPedido == null || idPedido.isBlank()) {
+            throw new IllegalArgumentException("El ID del pedido no puede estar vacío.");
+        }
+        if (tipoPedido == null || tipoPedido.isBlank()) {
+            throw new IllegalArgumentException("El tipo de pedido debe ser válido.");
+        }
+
         this.idPedido = idPedido;
-        this.direccionEntrega = direccionEntrega;
         this.tipoPedido = tipoPedido;
+        setDireccionEntrega(direccionEntrega);
     }
 
-    public String getIdPedido() {
-        return idPedido;
-    }
+    // Métodos que las subclases deben implementar
+    // ===========================================
+    public abstract void asignarRepartidor();
 
-    public void setIdPedido(String idPedido) {
-        this.idPedido = idPedido;
-    }
-
-    public String getDireccionEntrega() {
-        return direccionEntrega;
-    }
+    public abstract void asignarRepartidor(String nombreRepartidor);
+    // ===========================================
 
     public void setDireccionEntrega(String direccionEntrega) {
+        if (direccionEntrega == null || direccionEntrega.isBlank()) {
+            throw new IllegalArgumentException("La dirección de entrega debe ser válida.");
+        }
         this.direccionEntrega = direccionEntrega;
     }
-
-    public String getTipoPedido() {
-        return tipoPedido;
-    }
-
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
-    }
-
-    public abstract void asignarRepartidor();
 }
